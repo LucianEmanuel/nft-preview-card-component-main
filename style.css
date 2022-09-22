@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-clr-light-blue: hsl(215, 51%, 70%);
+  --primary-clr-cyan: hsl(178, 100%, 50%);
+  --Very-dark-blue-BG: hsl(217, 54%, 11%);
+  --Very-dark-blue-card-BG: hsl(216, 50%, 16%);
+  --Very-dark-blue-line: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+  --ff-body: "Outfit", sans-serif;
+  --fs-primary-heading: 1.4rem;
+  --fs-body: 0.875rem;
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-bold: 600;
+  --padding: 1rem;
+  --margin: 1rem;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: var(--Very-dark-blue-BG);
+  width: 100%;
+  font-family: var(--ff-body);
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+img {
+  display: block;
+  width: 100%;
+}
+h1 {
+  color: var(--White);
+  font-size: var(--fs-primary-heading);
+  margin-block: 1rem;
+}
+p {
+  color: var(--primary-clr-light-blue);
+  font-size: 0.875rem;
+}
+.container {
+  width: 40%;
+  margin: 0 auto;
+  background-color: var(--Very-dark-blue-card-BG);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+.image {
+  position: relative;
+}
+.icon-positioned {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  opacity: 0;
+  transition: opacity 200ms linear;
+}
+
+.image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--primary-clr-cyan);
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 200ms linear;
+}
+.image:hover .icon-positioned {
+  opacity: 1;
+}
+.image:hover::after {
+  opacity: 0.4;
+}
+
+.hero-img {
+  border-radius: 10px;
+}
+.icon {
+  width: 20px;
+}
+.primary-text {
+  margin-bottom: 1rem;
+}
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--Very-dark-blue-line);
+  margin-bottom: 1rem;
+}
+.flex-row-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.special-text {
+  color: var(--primary-clr-cyan);
+}
+.creator {
+  display: flex;
+  gap: 1rem;
+}
+.creator .icon {
+  width: 30px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.creator p a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+h1:hover,
+.creator p a:hover {
+  color: var(--primary-clr-cyan);
+}
